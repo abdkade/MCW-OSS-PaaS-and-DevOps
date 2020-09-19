@@ -7,7 +7,7 @@ var Order = require('../models/Order');
 var Plan = require('../models/Plan');
 var User = require('../models/User');
 
-var databaseUrl = 'mongodb://localhost:27017/best-for-you-organics';
+var databaseUrl = "mongodb+srv://derka:Marine7815@cluster0.d45v4.azure.mongodb.net/best-for-you-organics?retryWrites=true&w=majority";
 
 var twoPersonPlanId = new ObjectId();
 var fourPersonPlanId = new ObjectId();
