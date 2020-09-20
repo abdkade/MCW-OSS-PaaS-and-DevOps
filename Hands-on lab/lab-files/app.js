@@ -13,8 +13,14 @@ var userSession = require('./routes/session');
 
 var app = express();
 
+const env = require('./env/environment');
+
+
+//var databaseUrl = `mongodb://${env.cosmosdbName}:${env.key}@${env.cosmosdbName}.documents.azure.com:${env.port}/${env.db}?ssl=true&sslverifycertificate=false`;
 //var databaseUrl = 'mongodb://localhost:27017/best-for-you-organics';
-var databaseUrl= "mongodb+srv://derka:Marine7815@cluster0.d45v4.azure.mongodb.net/best-for-you-organics?retryWrites=true&w=majority";
+//var databaseUrl= "mongodb+srv://derka:Marine7815@cluster0.d45v4.azure.mongodb.net/best-for-you-organics?retryWrites=true&w=majority";
+var databaseUrl="mongodb://faso-mcw-cosmosdb:dWC4RdppUxQr0er87sVIZLxVeu08PFEmVncmwJvXkHWdgAnBXCpXtfDv6AjQif9PYMpHONrCMmy3ymro7KJ1gQ==@faso-mcw-cosmosdb.mongo.cosmos.azure.com:10255/best-for-you-organics?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@faso-mcw-cosmosdb@";
+
 
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
