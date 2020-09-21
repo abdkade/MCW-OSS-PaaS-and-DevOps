@@ -1,0 +1,21 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('checkout code') {
+     checkout scm
+    }
+    stage('build image'){         
+            sh 'docker login $ACR_LOGIN -u $ACR_USER -p ACR_PASSWORD'
+            sh 'docker build tage $ACR_LOGIN/fasobestapp .'
+            
+    }
+    stage('pushing image'){
+             
+            sh 'docker push '$ACR_LOGIN/fasobestapp'
+    }
+    stage('Running nodejs app'){
+      sh 'docker run --name ng -d -p 3000:4200 $ACR_LOGIN/fasobestapp'
+    }
+  }
+}
