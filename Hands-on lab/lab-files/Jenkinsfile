@@ -7,7 +7,7 @@ pipeline {
     stage('build image'){
         steps{
             
-            sh 'docker login $ACR_LOGIN -u $ACR_USER -p ACR_PASSWORD'
+            sh 'docker login $ACR_LOGIN -u $ACR_USERNAME -p $ACR_PASSWORD'
             sh 'docker build tage $ACR_LOGIN/fasobestapp .'
         
      }
