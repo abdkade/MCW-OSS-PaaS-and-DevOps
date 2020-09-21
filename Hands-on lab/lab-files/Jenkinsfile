@@ -6,7 +6,7 @@ pipeline {
    
     stage('build image'){
         steps{
-            
+            sh 'cd "Hands-on lab/lab-files"'
             sh 'docker login $ACR_LOGIN -u $ACR_USERNAME -p $ACR_PASSWORD'
             sh 'docker build --tag $ACR_LOGIN/fasobestapp .'
         
