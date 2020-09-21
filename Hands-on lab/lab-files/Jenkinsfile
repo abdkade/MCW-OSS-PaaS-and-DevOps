@@ -12,7 +12,7 @@ pipeline {
     }
     stage('pushing image'){
              
-            sh 'docker push '$ACR_LOGIN/fasobestapp'
+            sh 'docker push $ACR_LOGIN/fasobestapp'
     }
     stage('Running nodejs app'){
       sh 'docker run --name ng -d -p 3000:4200 $ACR_LOGIN/fasobestapp'
