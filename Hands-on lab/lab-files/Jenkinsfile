@@ -8,7 +8,7 @@ pipeline {
         steps{
             
             sh 'docker login $ACR_LOGIN -u $ACR_USERNAME -p $ACR_PASSWORD'
-            sh 'docker build tage $ACR_LOGIN/fasobestapp .'
+            sh 'docker build --tag $ACR_LOGIN/fasobestapp .'
         
      }
     }
