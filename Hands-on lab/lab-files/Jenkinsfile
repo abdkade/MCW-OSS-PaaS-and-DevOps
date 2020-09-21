@@ -13,10 +13,14 @@ pipeline {
      }
     }
     stage('pushing image'){
-        steps{
-            
-            sh 'docker push $ACR_LOGIN/fasobestapp'
-        
+        steps{   
+            sh 'docker push $ACR_LOGIN/fasobestapp'  
+     } 
+   
+  }
+ stage('run image'){
+        steps{   
+            sh 'docker run -it -p 3000:4200 $ACR_LOGIN/fasobestapp'  
      } 
    
   }
