@@ -20,10 +20,6 @@ pipeline {
      } 
    
   }
-  stage('Run image locally'){
-    steps{
-       sh 'docker run --name ng -d -p 3000:4200 $ACR_LOGIN/fasobestapp'
-    }
-  }
+  
 }
 }
